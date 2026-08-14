@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Verhindert Scrollen auf Mobilgeräten außerhalb der Engine */
+    background-color: #1e1e1e;
+}
+
+header {
+    background: #2d2d2d;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header button {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    margin-left: 8px;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+header button:active {
+    transform: scale(0.95);
+}
+
+.btn-play {
+    background: #4CAF50;
+    color: white;
+}
+.btn-play:hover { background: #45a049; }
+
+.btn-reset {
+    background: #e53935;
+    color: white;
+}
+.btn-reset:hover { background: #d32f2f; }
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+#blocklyDiv {
+    flex: 1;
+    height: 100%;
+    border-right: 2px solid #000;
+}
+
+#renderDiv {
+    flex: 1;
+    height: 100%;
+    background: #87CEEB; /* Himmelblau */
+    position: relative;
+    overflow: hidden;
+}
+
+#overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+/* Responsives Design: Handy & Tablet hochkant */
+@media (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+    #blocklyDiv {
+        border-right: none;
+        border-bottom: 2px solid #000;
+        height: 55%; /* Etwas mehr Platz für Blöcke */
+    }
+    #renderDiv {
+        height: 45%;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3D Block Engine für GitHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Blockly Core & Blocks -->
+    <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+    <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+    <!-- Blockly JavaScript Generator -->
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <!-- Blockly German Translation -->
+    <script src="https://unpkg.com/blockly/msg/de.js"></script>
+    
+    <!-- Three.js (3D Library) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">🧊 3D Block Engine</div>
+        <div class="controls">
+            <button id="runBtn" class="btn-play">▶ Start</button>
+            <button id="resetBtn" class="btn-reset">🔄 Reset</button>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Blockly Workspace Area -->
+        <div id="blocklyDiv"></div>
+        <!-- 3D Render Area -->
+        <div id="renderDiv">
+            <div id="overlay">Drücke auf Start!</div>
+        </div>
+    </main>
+
+    <!-- Blockly Toolbox Definition -->
+    <xml id="toolbox" style="display: none">
+        <category name="Objekte" colour="160">
+            <block type="create_cube"></block>
+            <block type="create_sphere"></block>
+        </category>
+        <category name="Bewegung & Posi" colour="230">
+            <block type="set_position">
+                <value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+                <value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+                <value name="Z"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+            </block>
+            <block type="rotate_continuous"></block>
+        </category>
+        <category name="Aussehen" colour="20">
+            <block type="set_color"></block>
+        </category>
+        <category name="Mathematik" colour="210">
+            <block type="math_number"></block>
+        </category>
+        <category name="Logik" colour="120">
+            <block type="controls_repeat_ext">
+                <value name="TIMES"><shadow type="math_number"><field name="NUM">10</field></shadow></value>
+            </block>
+        </category>
+    </xml>
+
+    <!-- Eigene Scripts -->
+    <script src="js/blocks.js"></script>
+    <script src="js/engine.js"></script>
+</body>
+</html>
