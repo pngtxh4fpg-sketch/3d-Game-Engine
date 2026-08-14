@@ -6,15 +6,11 @@
     <title>3D Block Engine für GitHub</title>
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Blockly Core & Blocks -->
     <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
     <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
-    <!-- Blockly JavaScript Generator -->
     <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
-    <!-- Blockly German Translation -->
     <script src="https://unpkg.com/blockly/msg/de.js"></script>
     
-    <!-- Three.js (3D Library) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
@@ -27,15 +23,12 @@
     </header>
     
     <main>
-        <!-- Blockly Workspace Area -->
         <div id="blocklyDiv"></div>
-        <!-- 3D Render Area -->
         <div id="renderDiv">
             <div id="overlay">Drücke auf Start!</div>
         </div>
     </main>
 
-    <!-- Blockly Toolbox Definition -->
     <xml id="toolbox" style="display: none">
         <category name="Objekte" colour="160">
             <block type="create_cube"></block>
@@ -62,7 +55,6 @@
         </category>
     </xml>
 
-    <!-- Eigene Scripts -->
     <script src="js/blocks.js"></script>
     <script src="js/engine.js"></script>
 </body>
